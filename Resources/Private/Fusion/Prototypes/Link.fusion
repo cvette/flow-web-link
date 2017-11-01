@@ -1,0 +1,23 @@
+prototype(Vette.WebLink:Link) < prototype(Neos.Fusion:Tag) {
+    tagName = 'link'
+
+    href = null
+    rel = 'preload'
+
+    attributes {
+        href = ${Vette.WebLink.link(href, rel)}
+        rel = ${rel}
+    }
+
+    @context {
+        href = ${this.href}
+        rel = ${this.rel}
+    }
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'documentNode'
+        }
+    }
+}

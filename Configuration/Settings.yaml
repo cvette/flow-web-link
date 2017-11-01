@@ -1,0 +1,21 @@
+Neos:
+  Flow:
+    http:
+      chain:
+        'preprocess':
+          chain:
+            'webLink':
+              position: 'start'
+              component: Vette\WebLink\Http\Component\WebLinkProviderComponent
+        'postprocess':
+          chain:
+            'webLink':
+              position: 'start'
+              component: Vette\WebLink\Http\Component\WebLinkResponseComponent
+  Fusion:
+    defaultContext:
+      Vette.WebLink: Vette\WebLink\Fusion\Helper\WebLinkHelper
+  Neos:
+    fusion:
+      autoInclude:
+        Vette.WebLink: true
