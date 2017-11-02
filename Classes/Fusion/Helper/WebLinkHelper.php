@@ -1,13 +1,9 @@
 <?php
 namespace Vette\WebLink\Fusion\Helper;
 
-use Fig\Link\GenericLinkProvider;
-use Fig\Link\Link;
 use Neos\Eel\ProtectedContextAwareInterface;
-use Neos\Flow\Core\Bootstrap;
-use Neos\Flow\Http\HttpRequestHandlerInterface;
+use Vette\WebLink\Http\WebLinkService;
 use Neos\Flow\Annotations as Flow;
-use Vette\WebLink\Http\LinkProvider;
 
 /**
  * Class WebLinkHelper
@@ -18,9 +14,9 @@ class WebLinkHelper implements ProtectedContextAwareInterface
 
     /**
      * @Flow\Inject
-     * @var Bootstrap
+     * @var WebLinkService
      */
-    protected $bootstrap;
+    protected $webLinkService;
 
 
     /**
@@ -33,22 +29,7 @@ class WebLinkHelper implements ProtectedContextAwareInterface
      */
     public function link(string $uri, string $rel, array $attributes = array())
     {
-        $link = new Link($rel, $uri);
-        foreach ($attributes as $key => $value) {
-            $link = $link->withAttribute($key, $value);
-        }
-
-        $requestHandler = $this->bootstrap->getActiveRequestHandler();
-
-        if ($requestHandler instanceof HttpRequestHandlerInterface) {
-            $request = $requestHandler->getHttpRequest();
-            $linkProvider = $request->getAttribute('linkProvider');
-            if ($linkProvider instanceof LinkProvider) {
-                $linkProvider->addLink($link);
-            }
-        }
-
-        return $uri;
+        return $this->webLinkService->link($uri, $rel, $attributes);
     }
 
     /**
