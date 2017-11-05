@@ -1,5 +1,5 @@
 {
-  "name": "vette/flow-web-link",
+  "name": "cvette/flow-web-link",
   "type": "neos-package",
   "description": "Neos Flow WebLink Package.",
   "keywords": ["link", "psr13", "http", "http2", "preload", "prefetch", "prerender", "dns-prefetch", "push", "performance"],
