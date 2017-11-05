@@ -1,3 +1,5 @@
+[![Latest Stable Version](https://poser.pugx.org/cvette/flow-web-link/v/stable)](https://packagist.org/packages/cvette/flow-web-link) [![Total Downloads](https://poser.pugx.org/cvette/flow-web-link/downloads)](https://packagist.org/packages/cvette/flow-web-link) [![License](https://poser.pugx.org/cvette/flow-web-link/license)](https://packagist.org/packages/cvette/flow-web-link)
+
 # WebLink Package for Neo Flow
 
 This Neos Flow package provides methods to manage links between resources and advise clients to preload and prefetch resources through HTTP and HTTP/2 pushes.
