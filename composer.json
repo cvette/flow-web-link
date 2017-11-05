@@ -1,5 +1,5 @@
 {
-  "name": "vette/web-link",
+  "name": "vette/flow-web-link",
   "type": "neos-package",
   "description": "Neos Flow WebLink Package.",
   "keywords": ["link", "psr13", "http", "http2", "preload", "prefetch", "prerender", "dns-prefetch", "push", "performance"],
@@ -15,7 +15,7 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "3.0.x-dev"
+      "dev-master": "1.0.x-dev"
     }
   }
 }
